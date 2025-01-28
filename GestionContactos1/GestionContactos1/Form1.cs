@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
-namespace GestionContactos
+namespace GestionContactos1
 {
     public partial class Form1 : Form
     {
@@ -17,17 +17,16 @@ namespace GestionContactos
         {
             InitializeComponent();
         }
-
         const int Tam = 10;
         string[] nombres = new string[Tam];
         string[] telefonos = new string[Tam];
         int cont = 0;
-        void añadirContacto(string[] nombres, string[] telefonos, string nombre, string telefono) 
+        void añadirContacto(string[] nombres, string[] telefonos, string nombre, string telefono)
         {
             bool stop = false;
             for (int i = 0; i < nombres.Length || !stop; i++)
             {
-                if (nombres[i] == null) 
+                if (nombres[i] == null)
                 {
                     nombres[i] = nombre;
                     telefonos[i] = telefono;
@@ -37,13 +36,13 @@ namespace GestionContactos
         }
 
 
-        
-        bool comprobarNombre(string[] nombres, string nombre) 
+
+        bool comprobarNombre(string[] nombres, string nombre)
         {
             bool valido = true;
-            for(int i = 0; i < nombres.Length ; i++)
+            for (int i = 0; i < nombres.Length; i++)
             {
-                if (nombres[i] != null) 
+                if (nombres[i] != null)
                 {
                     if (nombres[i] == nombre)
                     {

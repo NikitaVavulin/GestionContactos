@@ -1,4 +1,4 @@
-﻿namespace GestionContactos
+﻿namespace GestionContactos1
 {
     partial class Form1
     {
@@ -33,10 +33,10 @@
             // 
             // btnAñadirCont
             // 
-            this.btnAñadirCont.Location = new System.Drawing.Point(60, 58);
+            this.btnAñadirCont.Location = new System.Drawing.Point(34, 43);
             this.btnAñadirCont.Name = "btnAñadirCont";
             this.btnAñadirCont.Size = new System.Drawing.Size(158, 65);
-            this.btnAñadirCont.TabIndex = 0;
+            this.btnAñadirCont.TabIndex = 1;
             this.btnAñadirCont.Text = "Añadir contacto";
             this.btnAñadirCont.UseVisualStyleBackColor = true;
             this.btnAñadirCont.Click += new System.EventHandler(this.btnAñadirCont_Click);
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 450);
+            this.ClientSize = new System.Drawing.Size(437, 450);
             this.Controls.Add(this.btnAñadirCont);
             this.Name = "Form1";
             this.Text = "Form1";

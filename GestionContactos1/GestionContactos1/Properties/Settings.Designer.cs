@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestionContactos.Properties
+namespace GestionContactos1.Properties
 {
 
 
