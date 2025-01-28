@@ -78,5 +78,25 @@ namespace GestionContactos1
             telefono = Interaction.InputBox("Telefono: ");
             añadirContacto(nombres, telefonos, nombre, telefono);
         }
+
+        void EliminarContacto(string[] nombres, string[] telefonos, string nombre)
+        {
+            for (int i = 0; i < nombres.Length; i++)
+            {
+                if (nombres[i] == nombre)
+                {
+                    nombres[i] = null;
+                    telefonos[i] = null;
+                }
+            }
+        }
+
+        private void btnEliminarContacto_Click(object sender, EventArgs e)
+        {
+            string nombre = "";
+            nombre = Interaction.InputBox("Nombre: ");
+            EliminarContacto(nombres, telefonos, nombre);
+            MessageBox.Show("Contacto eliminado");
+        }
     }
 }
