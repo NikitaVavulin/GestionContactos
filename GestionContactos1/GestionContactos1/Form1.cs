@@ -79,24 +79,62 @@ namespace GestionContactos1
             añadirContacto(nombres, telefonos, nombre, telefono);
         }
 
-        void EliminarContacto(string[] nombres, string[] telefonos, string nombre)
+        bool EliminarContacto(string[] nombres, string[] telefonos, string nombre)
         {
+            bool encontrado = false;
             for (int i = 0; i < nombres.Length; i++)
             {
                 if (nombres[i] == nombre)
                 {
+                    encontrado = true;
                     nombres[i] = null;
                     telefonos[i] = null;
                 }
             }
+            return encontrado;
         }
 
         private void btnEliminarContacto_Click(object sender, EventArgs e)
         {
             string nombre = "";
             nombre = Interaction.InputBox("Nombre: ");
-            EliminarContacto(nombres, telefonos, nombre);
-            MessageBox.Show("Contacto eliminado");
+            if (EliminarContacto(nombres, telefonos, nombre))
+            {
+                MessageBox.Show("Contacto eliminado");
+            }
+            else 
+            {
+                MessageBox.Show("Contacto no ha encontrado");
+            }
+            
+        }
+
+        bool modificarTel(string[] nombres, string nombre) 
+        {
+            bool valido = false;
+            for (int i = 0; i < nombres.Length && !valido; i++) 
+            {
+                if (nombres[i] == nombre) 
+                {
+                    valido = true;
+                    telefonos[i] = Interaction.InputBox("Nuevo telefono: ");
+                }
+            }
+            return valido;
+        }
+
+        private void btnModificarContacto_Click(object sender, EventArgs e)
+        {
+            string nombre = Interaction.InputBox("Nombre del contacto para modificar telefono: ");
+            bool valido = modificarTel(nombres, nombre);
+            if (valido)
+            {
+                MessageBox.Show("Telefono ha cambiado");
+            }
+            else 
+            {
+                MessageBox.Show("Error: nombre no existe");
+            }
         }
     }
 }
