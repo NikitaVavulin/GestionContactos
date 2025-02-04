@@ -24,7 +24,7 @@ namespace GestionContactos1
         void añadirContacto(string[] nombres, string[] telefonos, string nombre, string telefono)
         {
             bool stop = false;
-            for (int i = 0; i < nombres.Length || !stop; i++)
+            for (int i = 0; i < nombres.Length && !stop; i++)
             {
                 if (nombres[i] == null)
                 {
@@ -53,18 +53,6 @@ namespace GestionContactos1
             return valido;
         }
 
-
-        /*
-        string mostrar(string[] nombres, string[] telefonos) 
-        {
-            string text = "Contactos: \n";
-            for (int i = 0; i < Tam; i++) 
-            {
-                text += nombres[i] + " " + telefonos[i] + "\n";
-            }
-            return text;
-        }
-        */
 
         private void btnAñadirCont_Click(object sender, EventArgs e)
         {
@@ -135,6 +123,21 @@ namespace GestionContactos1
             {
                 MessageBox.Show("Error: nombre no existe");
             }
+        }
+
+        string MostrarContacto ( string[] nombres, string[] telefonos )
+        {
+            string text = "Contactos: \n";
+            for (int i = 0; i < Tam; i++)
+            {
+                text += nombres[i] + " " + telefonos[i] + "\n";
+            }
+            return text;
+        }
+
+        private void btnMostrarContacto_Click ( object sender, EventArgs e )
+        {
+            MessageBox.Show(MostrarContacto(nombres, telefonos));
         }
     }
 }
